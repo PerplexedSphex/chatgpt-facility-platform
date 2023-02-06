@@ -26,24 +26,3 @@ CREATE TABLE project_facilities (
   FOREIGN KEY (project_id) REFERENCES projects(project_id),
   FOREIGN KEY (facility_id) REFERENCES facilities(facility_id)
 );
-
-CREATE TABLE tasks (
-  task_id SERIAL PRIMARY KEY,
-  project_id INT NOT NULL,
-  facility_id INT NOT NULL,
-  task_name VARCHAR(255) NOT NULL,
-  task_status VARCHAR(255) NOT NULL,
-  deadline DATE NOT NULL,
-  CHECK (task_status IN ('pending', 'in progress', 'completed')),
-  FOREIGN KEY (project_id) REFERENCES projects(project_id),
-  FOREIGN KEY (facility_id) REFERENCES facilities(facility_id)
-);
-
-CREATE TABLE tickets (
-  ticket_id SERIAL PRIMARY KEY,
-  task_id INT,
-  project_id INT,
-  ticket_name VARCHAR(255) NOT NULL,
-  FOREIGN KEY (task_id) REFERENCES tasks(task_id),
-  FOREIGN KEY (project_id) REFERENCES projects(project_id)
-);
