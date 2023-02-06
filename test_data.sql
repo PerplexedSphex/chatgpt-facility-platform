@@ -35,7 +35,7 @@ VALUES
   ('Efficient Fleet Monitoring', 'eff_fleet_monitoring_207'),
   ('Clean Truck Fleet Expansion', 'clean_truck_fleet_exp_208')
   
-INSERT INTO project_facility (project_id, facility_id)
+INSERT INTO project_facilities (project_id, facility_id)
 VALUES
     (1, 1),
     (1, 2),
